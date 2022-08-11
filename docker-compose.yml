@@ -1,0 +1,15 @@
+version: '3'
+services:
+
+  nodejs:
+    build: .
+    container_name: nodejs
+    env_file: .env
+    ports:
+      - "1235:1234"
+      - "1314:1313"
+    volumes:
+      - ./file:/src
+      - ./.ssh:/root/.ssh
+    tty: true
+    restart: always
